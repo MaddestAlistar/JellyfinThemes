@@ -1,10 +1,16 @@
-name: Validate Jellyfin CSS themes
-on: [push, pull_request, workflow_dispatch]
+name: Validate Jellyfin themes
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
 jobs:
-  smoke:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: '3.11'}
-      - run: python scripts/validate.py
+        with:
+          python-version: '3.11'
+      - run: "python3 scripts/validate.py"
+      - run: "python3 -c \"from pathlib import Path; assert Path('preview/index.html').exists(); assert len(list(Path('themes').glob('*.css')))==3\""
