@@ -12,6 +12,12 @@
 
 **[打开颜色与组件预览](preview/index.html)**（预览是静态设计模拟，并非真实 Jellyfin Web 截图）。
 
+## JSON 资源入口
+
+**[获取统一 JSON 主题目录](https://raw.githubusercontent.com/MaddestAlistar/JellyfinThemes/main/index.json)**
+
+JSON 记录三款主题的名称、直接 CSS 链接，**并且将每个主题 CSS 全文放入 `themes[].css`**，方便开发者程序化读取。Jellyfin Web 仍使用 CSS 而非导入 JSON；可以从 JSON 提取字符串后粘贴至「自定义 CSS」。
+
 ## 如何使用
 
 1. 先备份 Jellyfin 管理后台中已有的自定义 CSS。
