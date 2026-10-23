@@ -1,0 +1,30 @@
+/* 良友 Jellyfin Theme · 极简石墨 · 2026-10-23
+   Target: Jellyfin Web; styles rely on UI classnames and may change across versions.
+   Back up the original CSS before installing. */
+:root {
+  --ly-bg: #101316;
+  --ly-surface: #1b2024;
+  --ly-raised: #283037;
+  --ly-accent: #b6d7da;
+  --ly-accent-light: #e1f3f4;
+  --ly-muted: #bcc5c9;
+}
+
+html, body, .backgroundContainer, .dialog, .mainDrawer, .skinHeader,
+.formDialogHeader, .formDialogFooter { background-color: var(--ly-bg) !important; }
+.backgroundContainer { background-image: radial-gradient(ellipse at 60% 2%, color-mix(in srgb, var(--ly-accent) 10%, transparent), transparent 58%) !important; }
+.skinHeader { box-shadow: 0 6px 24px #0004 !important; border-bottom: 1px solid color-mix(in srgb, var(--ly-accent) 18%, transparent) !important; }
+.mainDrawer { border-right: 1px solid #ffffff10 !important; }
+.navMenuOption-selected, .navMenuOption:hover { color: var(--ly-accent-light) !important; background: color-mix(in srgb, var(--ly-accent) 15%, transparent) !important; border-radius: 10px !important; }
+.cardBox { background: var(--ly-surface) !important; border: 1px solid #ffffff12 !important; border-radius: 13px !important; overflow: hidden; box-shadow: 0 8px 20px #0003; }
+.cardImageContainer { border-radius: 10px 10px 0 0; }
+.cardBox:hover { border-color: color-mix(in srgb, var(--ly-accent) 46%, transparent) !important; }
+.cardText, .secondaryText, .fieldDescription { color: var(--ly-muted) !important; }
+.button-submit, .emby-button.button-submit, .raised.button-submit { background: var(--ly-accent) !important; color: var(--ly-bg) !important; border-radius: 10px !important; }
+.button-submit:hover, .emby-button.button-submit:hover { background: var(--ly-accent-light) !important; }
+.emby-input, .emby-textarea, .emby-select { background: var(--ly-raised) !important; border: 1px solid #ffffff25 !important; border-radius: 9px !important; }
+.emby-input:focus, .emby-textarea:focus, .emby-select:focus { border-color: var(--ly-accent) !important; outline: 2px solid color-mix(in srgb, var(--ly-accent) 35%, transparent) !important; }
+.itemDetailPage .detailPagePrimaryContainer { background: linear-gradient(180deg, transparent 0%, var(--ly-bg) 100%) !important; }
+.paper-icon-button-light:hover, .emby-tab-button-active { color: var(--ly-accent-light) !important; }
+@media (max-width: 700px) { .cardBox { border-radius: 10px !important; } }
+@media (prefers-reduced-motion: reduce) { .cardBox, .emby-button { transition: none !important; } }
